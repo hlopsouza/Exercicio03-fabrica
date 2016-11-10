@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Produto]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Titulo] VARCHAR(150) NOT NULL,
+	[Valor] DECIMAL(10,2) NOT NULL,
+	[DataCadastro] DATE NOT NULL,
+	[Descricao] VARCHAR(255) NOT NULL,
+	[Nacional] BIT NOT NULL
+)

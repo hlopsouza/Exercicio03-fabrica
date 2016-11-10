@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ListarProduto";
+}
+
+<h2 class="espacamento">Produtos cadastrados</h2>
+
+<table class="table table-striped" border="1">
+    <thead>
+        <tr>
+            <td><strong>Título</strong></td>
+            <td><strong>Descrição</strong></td>
+            <td><strong>Data de cadastro</strong></td>
+            <td><strong>Valor</strong></td>
+            <td><strong>Nacional</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in ViewBag.listar)
+        {
+            string nacional = (produto.Nacional ? "Sim" : "Não");
+            <tr>
+                <td>@produto.Titulo</td>
+                <td>@produto.Descricao</td>
+                <td>@produto.DataCadastro</td>
+                <td>R$ @produto.Valor</td>
+                <td>@nacional</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

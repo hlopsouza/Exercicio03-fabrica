@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "CadastrarProduto";
+}
+
+<h2 class="espacamento">Cadastrar</h2>
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">@TempData["Mensagem"]</div>
+}
+
+@using (@Html.BeginForm("CadastrarProduto", "Produto", "POST"))
+{
+    <div class="form-group">
+        <label for="Titulo">Título</label>
+        <input type="text" name="Titulo" id="Titulo"
+               class="form-control" placeholder="Título do produto" autofocus required>
+    </div>
+
+    <div class="form-group">
+        <label>Valor</label>
+        <input type="text" name="Valor" id="Valor"
+               class="form-control" placeholder="Valor do produto" required>
+    </div>
+
+    <div class="form-group">
+        <label for="DataCadastro">Data de cadastro</label>
+        <input type="date" name="DataCadastro" id="DataCadastro"
+               class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="Descricao">Descrição</label>
+        <textarea name="Descricao" id="Descricao"
+                  class="form-control" placeholder="Descreva o produto..." required></textarea>
+    </div>
+
+    <div class="form-group">
+        <input type="checkbox" name="Nacional" id="Nacional" value="true" checked>
+        <label for="Nacional">Nacional</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary espacamento">
+        <i class="glyphicon glyphicon-floppy-disk"></i>
+        Salvar
+    </button>
+
+
+
+
+
+}
+
